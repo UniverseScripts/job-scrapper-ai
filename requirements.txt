@@ -5,3 +5,4 @@ python-dotenv
 tenacity
 plotly
 groq
+altair<5

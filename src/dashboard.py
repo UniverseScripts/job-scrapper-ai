@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import json
@@ -12,6 +11,8 @@ PROCESSED_DATA_PATH = os.path.join("data", "processed", "jobs.csv")
 def load_data() -> pd.DataFrame:
     """Loads processed job data from CSV."""
     if not os.path.exists(PROCESSED_DATA_PATH):
+        # Fallback: Try to use st.secrets for PROCESSED_DATA_PATH if cloud hosted (advanced)
+        # But primarily we just return empty
         return pd.DataFrame()
     return pd.read_csv(PROCESSED_DATA_PATH)
 
@@ -39,8 +40,7 @@ def render_tech_stack_chart(df: pd.DataFrame):
     # Helper to clean and split
     def parse_stack(stack_str):
         try:
-            return request_str.replace("'", '"') # weak parse, robust logic needed in analyzer or here
-            # actually analyzer saves Python list -> pandas saves as string representation
+            # stack_str is stored as a string representation of a list
             import ast
             return ast.literal_eval(stack_str)
         except:
