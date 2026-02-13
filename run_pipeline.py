@@ -1,4 +1,3 @@
-
 import subprocess
 import time
 import os
@@ -20,18 +19,18 @@ def main():
     print("Starting Global Tech Intelligence Node Pipeline...")
     
     # 1. Scrape
-    run_step("uv run python src/scraper.py", "Scraping Hacker News")
+    run_step("python src/scraper.py", "Scraping Hacker News")
     
     # 2. Analyze
     # Note: src/analyzer.py in its current testing state processes a small limit of comments
     # to prove the concept.
-    run_step("uv run python src/analyzer.py", "Analyzing Data with Gemini")
+    run_step("python src/analyzer.py", "Analyzing Data with Gemini")
     
     # 3. Dashboard instruction
     print("\n" + "="*50)
     print("PIPELINE COMPLETE.")
     print("Run the dashboard using:")
-    print("uv run streamlit run src/dashboard.py")
+    print("streamlit run src/dashboard.py")
     print("="*50)
 
 if __name__ == "__main__":
