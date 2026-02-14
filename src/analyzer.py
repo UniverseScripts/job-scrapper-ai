@@ -59,6 +59,7 @@ class JobAnalyzer:
         """
         Cleans LLM response to ensure valid JSON.
         Removes markdown code fences and whitespace.
+        Handles double JSON output bug.
         """
         clean_text = response_text.strip()
         # Remove ```json ... ``` or just ``` ... ```
@@ -67,6 +68,13 @@ class JobAnalyzer:
             if clean_text.startswith("json"):
                 clean_text = clean_text[4:]
             clean_text = clean_text.strip()
+            
+        # Fix: Double JSON Output (e.g. {...}\n{...})
+        # If we detect multiple objects, take the first one.
+        if "}{" in clean_text:
+            # Split by "}{" and reconstruct the first object
+            clean_text = clean_text.split("}{")[0] + "}"
+            
         return clean_text
 
     @retry(wait=wait_exponential(min=1, max=10), stop=stop_after_attempt(3))
@@ -74,8 +82,9 @@ class JobAnalyzer:
         """
         Analyzes a SINGLE job post using Groq/Llama 3.
         """
-        # Truncate to 3500 chars (approx 900 tokens) to fit within 6000 TPM limit (allowing ~6 RPM)
-        MAX_CHARS = 3500
+        # OPTIMIZATION: Truncate to 1200 chars (approx 300 tokens) 
+        # Goal: Fit 800+ items into 500k daily token limit.
+        MAX_CHARS = 1200
         truncated_text = text[:MAX_CHARS]
         formatted_prompt = SYSTEM_PROMPT.format(job_text=truncated_text)
 
@@ -86,7 +95,6 @@ class JobAnalyzer:
                 ],
                 model=self.model_name,
                 temperature=0.1,
-                # response_format={"type": "json_object"} # Not supported by DeepSeek R1 Distill?
             )
             
             response_text = chat_completion.choices[0].message.content
@@ -101,7 +109,11 @@ class JobAnalyzer:
                     start = response_text.find("{")
                     end = response_text.rfind("}")
                     if start != -1 and end != -1:
-                        return json.loads(response_text[start:end+1])
+                        # Re-apply double JSON fix here too just in case
+                        candidate = response_text[start:end+1]
+                        if "}{" in candidate:
+                            candidate = candidate.split("}{")[0] + "}"
+                        return json.loads(candidate)
                 except:
                     pass
                 raise e
@@ -175,43 +187,75 @@ class JobAnalyzer:
             print(f"Error on item {comment.get('id')}: {e}")
             return None
 
+    def is_junk(self, text: str) -> bool:
+        """
+        Regex Gatekeeper: Filters out low-quality comments before LLM.
+        """
+        if len(text) < 60:
+            return True
+            
+        # Keywords that suggest a job post (or at least technical content)
+        keywords = [
+            "hiring", "remote", "visa", "engineer", "developer", "backend", "frontend", 
+            "fullstack", "devops", "sre", "data", "product", "design", "cto", 
+            "founder", "salary", "equity", "python", "golang", "rust", "react",
+            "node", "aws", "cloud", "ai", "ml"
+        ]
+        text_lower = text.lower()
+        if not any(k in text_lower for k in keywords):
+            return True
+            
+        return False
+
     def process_comments(self, comments: List[Dict], limit: int = 1000) -> List[Dict]:
         """
-        Processes comments one-by-one.
-        Target: ~150-300 RPM (Groq 8B is fast).
+        Processes comments one-by-one with Token Optimization Protocol.
         """
         results = []
-        # Filter short comments
-        valid_comments = [c for c in comments if len(c.get("text", "")) > 10]
-        valid_comments = valid_comments[:limit]
         
-        print(f"Starting GROQ ANALYSIS of {len(valid_comments)} comments...")
+        # 1. Total Token Tracker (Approximate)
+        # Input: ~1200 chars / 4 chars/token = 300 tokens
+        # Output: ~500 chars / 4 chars/token = 125 tokens
+        # Overhead: System Prompt ~300 tokens
+        # Total per Req: ~725 tokens.
+        # Daily Limit: 500,000.  Safe Stop: 480,000.
+        total_tokens_used = 0
+        MAX_DAILY_TOKENS = 480000
         
-        for i, comment in enumerate(valid_comments):
+        print(f"Starting GROQ ANALYSIS of {len(comments)} comments (Token Protocol Active)...")
+        
+        for i, comment in enumerate(comments):
+            # 2. Daily Quota Check
+            if total_tokens_used > MAX_DAILY_TOKENS:
+                print(f"⚠️ Daily Token Limit Reached ({total_tokens_used} > {MAX_DAILY_TOKENS}). Stopping gracefully.")
+                break
+                
+            text = comment.get("text", "")
+            
+            # 3. Regex Gatekeeper
+            if self.is_junk(text):
+                print(f"[{i+1}/{len(comments)}] Skipped (Junk Filter)")
+                continue
+
             result = self.process_single_item(comment)
             if result:
                 results.append(result)
+                # Estimate token usage for valid request
+                # 1200 chars input + ~200 chars output + prompt overhead
+                total_tokens_used += 750 
             
-            # Print progress every item for immediate feedback
-            print(f"[{i+1}/{len(valid_comments)}] Processed. Sleeping 10s...")
+            # Print progress every item
+            print(f"[{i+1}/{len(comments)}] Processed. Tokens: ~{total_tokens_used}. Sleeping 5s...")
             
-            # Rate Pacing (Crucial for Groq Free Tier)
-            # Model: deepseek-r1-distill-llama-70b (70B is larger, be careful)
-            # Limits: 30 RPM, 6,000 TPM (Tokens Per Minute).
-            # Analysis: 
-            #   - We truncate to 6000 chars (~1500 tokens max input) + Output (~200 tokens) = ~1700 tokens cost.
-            #   - 6,000 TPM / 1700 tokens per req = ~3.5 Requests Per Minute allowed.
-            #   - To be safe, we target 3 RPM.
-            #   - 60s / 3 RPM = 20s sleep.
-            #   - Wait... if we reduce chars to 3000 (~750 tokens), we can do ~8 RPM.
-            #   - Let's Lower MAX_CHARS to 3500 (~900 tokens) to allow decent speed.
-            #   - 900 tokens * 6 req = 5400 TPM. Safe.
-            #   - Sleep: 10 seconds.
-            time.sleep(10) 
+            # Rate Pacing
+            # 750 tokens * 8 RPM = 6000 TPM. 
+            # Sleep 5s = 12 RPM. 12 * 750 = 9000 TPM (Too high).
+            # Sleep 8s = 7.5 RPM. 7.5 * 750 = 5625 TPM. Safe.
+            time.sleep(8) 
 
-            # Incremental Save (Every 10 items) to allow Dashboard visualization immediately
-            if (i + 1) % 10 == 0:
-                print(f"[{i+1}/{len(valid_comments)}] Saving intermediate results...")
+            # Incremental Save
+            if len(results) % 10 == 0:
+                print(f"[{i+1}/{len(comments)}] Saving intermediate results...")
                 df = pd.DataFrame(results)
                 out_path = os.path.join("data", "processed", "jobs.csv")
                 os.makedirs(os.path.dirname(out_path), exist_ok=True)
