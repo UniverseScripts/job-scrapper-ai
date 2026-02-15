@@ -75,3 +75,6 @@ Thumbs.db
 data/raw/
 __pycache__/
 .streamlit/
+
+# Data
+data/processed/jobs.csv
