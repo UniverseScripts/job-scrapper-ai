@@ -111,7 +111,7 @@ def main():
         return
 
     # --- DaaS Teaser Logic ---
-    total_jobs = len(df)
+    # total_jobs = len(df) # HIDDEN: We use static marketing numbers now
     avg_salary = df['salary_year_usd'].mean() if 'salary_year_usd' in df.columns else 0
     
     # Slice for Free Tier
@@ -121,12 +121,12 @@ def main():
     if 'application_url' in df_teaser.columns:
         df_teaser['application_url'] = "🔒 Upgrade to Unlock"
     
-    st.warning(f"🔒 **Free Tier Preview:** Showing top 50 rows only. {total_jobs - 50}+ hidden premium jobs available in the full dataset.")
+    st.warning(f"🔒 **Free Tier Preview:** Showing top 50 rows only. Hundreds of hidden premium jobs available in the full dataset.")
 
     # --- Sidebar Filters ---
     st.sidebar.header("🔓 Unlock Full Access")
     st.sidebar.markdown(f"""
-    Get the complete **{total_jobs} job** dataset with:
+    Get the complete **400+ job** dataset with:
     *   ✅ Direct Application Links
     *   ✅ Full Salary Data
     *   ✅ Daily Updates
@@ -136,7 +136,7 @@ def main():
     
     st.sidebar.header("Filters (Preview)")
     
-    # 1. Tech Stack Filter (Use full DF for filter options to show what's available)
+    # 1. Tech Stack Filter
     all_tech_unique = set()
     for stack_str in df['tech_stack'].dropna():
         try:
@@ -158,28 +158,28 @@ def main():
     visa_options = ["All", "Yes", "No"]
     selected_visa = st.sidebar.selectbox("Visa Sponsorship Available", visa_options)
 
-    # 4. Experience Level Filter (New)
+    # 4. Experience Level Filter
     if 'experience_level' in df.columns:
         all_exp = df['experience_level'].dropna().unique().tolist()
         selected_exp = st.sidebar.multiselect("Experience Level", sorted(all_exp))
     else:
         selected_exp = []
 
-    # 5. Job Role Filter (New)
+    # 5. Job Role Filter
     if 'job_role' in df.columns:
         all_roles = df['job_role'].dropna().unique().tolist()
         selected_role = st.sidebar.multiselect("Job Role", sorted(all_roles))
     else:
         selected_role = []
 
-    # 6. Industry Filter (New)
+    # 6. Industry Filter
     if 'company_industry' in df.columns:
         all_inds = df['company_industry'].dropna().unique().tolist()
         selected_ind = st.sidebar.multiselect("Industry", sorted(all_inds))
     else:
         selected_ind = []
     
-    # --- Apply Filters (Apply to TEASER DF only) ---
+    # --- Apply Filters --
     filtered_df = df_teaser.copy()
     
     # Tech Stack
@@ -208,11 +208,11 @@ def main():
     # Industry
     if selected_ind:
         filtered_df = filtered_df[filtered_df['company_industry'].isin(selected_ind)]
-        
+    
     # --- Render Metrics & Charts ---
     # Use FULL DF for metrics to tease value
     col1, col2, col3 = st.columns(3)
-    col1.metric("Total Jobs (Global)", len(df))
+    col1.metric("Total Jobs (Global)", "400+") # STATIC
     col2.metric("Avg Salary (Global)", f"${avg_salary:,.0f}" if avg_salary else "N/A")
     col3.metric("Remote Jobs (Global)", len(df[df['remote_type'].astype(str).str.contains('GLOBAL|US_ONLY|EU_ONLY', case=False, na=False)]))
     
