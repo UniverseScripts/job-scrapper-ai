@@ -131,7 +131,7 @@ def main():
     *   ✅ Full Salary Data
     *   ✅ Daily Updates
     """)
-    st.sidebar.link_button("👉 Download Full CSV ($7/mo)", "https://galacticgamer62.gumroad.com/l/mbkfwv")
+    st.sidebar.link_button("👉 Download Full CSV ($7/mo)", "https://galacticgamer62.gumroad.com/l/job-weekly")
     st.sidebar.divider()
     
     st.sidebar.header("Filters (Preview)")
