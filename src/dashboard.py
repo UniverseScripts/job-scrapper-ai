@@ -111,7 +111,7 @@ def main():
         return
 
     # --- DaaS Teaser Logic ---
-    # total_jobs = len(df) # HIDDEN: We use static marketing numbers now
+    total_jobs = len(df)  # The real count. Never replace this with a static marketing number.
     avg_salary = df['salary_year_usd'].mean() if 'salary_year_usd' in df.columns else 0
     
     # Slice for Free Tier
@@ -121,17 +121,17 @@ def main():
     if 'application_url' in df_teaser.columns:
         df_teaser['application_url'] = "🔒 Upgrade to Unlock"
     
-    st.warning(f"🔒 **Free Tier Preview:** Showing top 50 rows only. Hundreds of hidden premium jobs available in the full dataset.")
+    st.warning(f"🔒 **Free Tier Preview:** Showing the first {min(50, total_jobs)} of {total_jobs} jobs in the full dataset.")
 
     # --- Sidebar Filters ---
     st.sidebar.header("🔓 Unlock Full Access")
     st.sidebar.markdown(f"""
-    Get the complete **400+ job** dataset with:
+    Get the complete **{total_jobs}-job** dataset with:
     *   ✅ Direct Application Links
     *   ✅ Full Salary Data
     *   ✅ Daily Updates
     """)
-    st.sidebar.link_button("👉 Download Full CSV ($7/mo)", "https://galacticgamer62.gumroad.com/l/job-weekly")
+    st.sidebar.link_button("👉 Download Full CSV ($7/mo)", "https://asteriostech.gumroad.com/l/job-weekly")
     st.sidebar.divider()
     
     st.sidebar.header("Filters (Preview)")
@@ -212,7 +212,7 @@ def main():
     # --- Render Metrics & Charts ---
     # Use FULL DF for metrics to tease value
     col1, col2, col3 = st.columns(3)
-    col1.metric("Total Jobs (Global)", "400+") # STATIC
+    col1.metric("Total Jobs (Global)", total_jobs)
     col2.metric("Avg Salary (Global)", f"${avg_salary:,.0f}" if avg_salary else "N/A")
     col3.metric("Remote Jobs (Global)", len(df[df['remote_type'].astype(str).str.contains('GLOBAL|US_ONLY|EU_ONLY', case=False, na=False)]))
     

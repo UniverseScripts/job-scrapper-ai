@@ -31,10 +31,20 @@ jobs:
         run: |
           python run_pipeline.py
 
+      # A run that extracts nothing must fail here, not publish an empty dataset.
+      # (From 2026-08-17 a 1-byte jobs.csv was committed daily while every run showed success.)
+      - name: Refuse to publish an empty dataset
+        run: |
+          python -c "import pandas as pd, sys; n = len(pd.read_csv('data/processed/jobs.csv')); print('rows:', n); sys.exit(0 if n > 0 else 1)"
+
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data/processed/jobs.csv
-          git commit -m "data: daily job update [skip ci]" || echo "No changes to commit"
-          git push
+          if git diff --cached --quiet; then
+            echo "Dataset unchanged."
+          else
+            git commit -m "data: daily job update [skip ci]"
+            git push
+          fi

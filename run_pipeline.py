@@ -24,7 +24,7 @@ def main():
     # 2. Analyze
     # Note: src/analyzer.py in its current testing state processes a small limit of comments
     # to prove the concept.
-    run_step("python src/analyzer.py", "Analyzing Data with Llama 3")
+    run_step("python src/analyzer.py", "Analyzing Data with Groq")
     
     # 3. Dashboard instruction
     print("\n" + "="*50)
