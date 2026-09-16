@@ -23,9 +23,16 @@ if not api_key:
 client = Groq(api_key=api_key)
 
 # Constants
-MODEL_NAME = "llama-3.1-8b-instant"
+# Groq retired llama-3.1-8b-instant for free and developer tiers on 2026-08-16. After that,
+# every call returned 404 model_not_found, no job was extracted, and the empty result
+# overwrote data/processed/jobs.csv. openai/gpt-oss-20b is Groq's named replacement.
+# Set GROQ_MODEL to switch models without a code change.
+MODEL_NAME = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
 
-# SYSTEM PROMPT (Optimized for Llama 3)
+# Rough per-request cost, used only when the API response carries no usage figures.
+ESTIMATED_TOKENS_PER_REQUEST = 750
+
+# SYSTEM PROMPT
 SYSTEM_PROMPT = """
 You are a strict data extraction engine. Output ONLY valid JSON.
 Extract these fields from the job post:
@@ -54,6 +61,8 @@ JSON Output:
 class JobAnalyzer:
     def __init__(self, model_name: str = MODEL_NAME):
         self.model_name = model_name
+        # Tokens billed for the most recent successful API call.
+        self.last_request_tokens = 0
 
     def _clean_json_response(self, response_text: str) -> str:
         """
@@ -80,7 +89,7 @@ class JobAnalyzer:
     @retry(wait=wait_exponential(min=1, max=10), stop=stop_after_attempt(3))
     def analyze_job(self, text: str) -> Dict[str, Any]:
         """
-        Analyzes a SINGLE job post using Groq/Llama 3.
+        Analyzes a SINGLE job post using the Groq model in MODEL_NAME.
         """
         # OPTIMIZATION: Truncate to 1200 chars (approx 300 tokens) 
         # Goal: Fit 800+ items into 500k daily token limit.
@@ -97,7 +106,11 @@ class JobAnalyzer:
                 temperature=0.1,
             )
             
-            response_text = chat_completion.choices[0].message.content
+            # Reasoning models spend extra tokens, so count what the API reports, not a guess.
+            usage = getattr(chat_completion, "usage", None)
+            self.last_request_tokens = getattr(usage, "total_tokens", None) or ESTIMATED_TOKENS_PER_REQUEST
+
+            response_text = chat_completion.choices[0].message.content or ""
             cleaned_response = self._clean_json_response(response_text)
             
             try:
@@ -119,7 +132,7 @@ class JobAnalyzer:
                 raise e
             
         except Exception as e:
-            print(f"Llama 3 Extraction Failed: {e}")
+            print(f"Extraction Failed ({self.model_name}): {e}")
             raise e
 
     def _normalize_salary(self, salary: Optional[int]) -> Optional[int]:
@@ -240,12 +253,11 @@ class JobAnalyzer:
             result = self.process_single_item(comment)
             if result:
                 results.append(result)
-                # Estimate token usage for valid request
-                # 1200 chars input + ~200 chars output + prompt overhead
-                total_tokens_used += 750 
-            
+                # Tokens reported by the API for this request (estimate only as a fallback)
+                total_tokens_used += self.last_request_tokens or ESTIMATED_TOKENS_PER_REQUEST
+
             # Print progress every item
-            print(f"[{i+1}/{len(comments)}] Processed. Tokens: ~{total_tokens_used}. Sleeping 5s...")
+            print(f"[{i+1}/{len(comments)}] Processed. Tokens: ~{total_tokens_used}. Sleeping 8s...")
             
             # Rate Pacing
             # 750 tokens * 8 RPM = 6000 TPM. 
@@ -254,14 +266,24 @@ class JobAnalyzer:
             time.sleep(8) 
 
             # Incremental Save
-            if len(results) % 10 == 0:
+            # `results and`: 0 % 10 == 0, so without it every failed item wrote an EMPTY
+            # checkpoint over the existing dataset. That is how jobs.csv became 1 byte.
+            if results and len(results) % 10 == 0:
                 print(f"[{i+1}/{len(comments)}] Saving intermediate results...")
-                df = pd.DataFrame(results)
-                out_path = os.path.join("data", "processed", "jobs.csv")
-                os.makedirs(os.path.dirname(out_path), exist_ok=True)
-                df.to_csv(out_path, index=False)
-            
+                save_jobs(results)
+
         return results
+
+
+def save_jobs(results: List[Dict], out_path: str = os.path.join("data", "processed", "jobs.csv")) -> None:
+    """Writes the dataset atomically and refuses to replace it with nothing."""
+    if not results:
+        raise ValueError("Refusing to write an empty jobs dataset.")
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    tmp_path = out_path + ".tmp"
+    pd.DataFrame(results).to_csv(tmp_path, index=False)
+    os.replace(tmp_path, out_path)
+
 
 if __name__ == "__main__":
     print("Testing JobAnalyzer (Groq)...")
@@ -279,10 +301,13 @@ if __name__ == "__main__":
         processed = analyzer.process_comments(comments, limit=1000)
         
         if processed:
-            df = pd.DataFrame(processed)
             out_path = os.path.join("data", "processed", "jobs.csv")
-            df.to_csv(out_path, index=False)
+            save_jobs(processed, out_path)
             print(f"Saved {len(processed)} jobs to {out_path}")
+        else:
+            # Fail the run instead of "succeeding" with nothing, so the workflow turns red
+            # and the last good jobs.csv is left untouched.
+            raise SystemExit(f"No jobs extracted from {len(comments)} comments (model: {analyzer.model_name}). jobs.csv left unchanged.")
     else:
         # Mini Test
         sample_text = "Hiring Remote Python Engineer. $120k. US Only."
