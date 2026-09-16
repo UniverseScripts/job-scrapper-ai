@@ -7,6 +7,16 @@ A "Stateless" Market Intelligence Dashboard that scrapes Hacker News "Who is Hir
 ## 🚀 Key Features
 *   **Auto-Scraper:** Fetches latest HN threads automatically.
 *   **AI Enrichment:** an LLM on Groq extracts `Job Role`, `Experience`, `Industry`, `Tech Stack`, and `Salary`. Set `GROQ_MODEL` to change the model (Groq retired `llama-3.1-8b-instant` for free-tier accounts on 2026-08-16).
+*   **Incremental, quota-aware runs:** each run extracts only posts not already in `jobs.csv`, merges them in, and drops rows older than `JOB_MAX_AGE_DAYS`. When the daily token budget or Groq's daily limit is reached, the run saves its progress and the next run continues. A failed or partial run never shrinks or empties the dataset.
+
+### Tuning (environment variables)
+| Variable | Default | Purpose |
+| :--- | :--- | :--- |
+| `GROQ_MODEL` | `openai/gpt-oss-20b` | Extraction model |
+| `GROQ_REASONING_EFFORT` | `low` | Reasoning effort for gpt-oss models (fewer tokens per post) |
+| `GROQ_DAILY_TOKEN_BUDGET` | `185000` | Stop for the day before Groq's free-tier 200,000 tokens/day limit |
+| `GROQ_TPM_LIMIT` | `8000` | Tokens per minute used to pace requests |
+| `JOB_MAX_AGE_DAYS` | `62` | Rows older than this are dropped from the dataset |
 *   **Zero Cost:** Runs entirely on free tiers (Groq API, GitHub Actions, Streamlit Community Cloud).
 *   **Monetization Ready:** Dashboard restricts data access and links to Gumroad.
 
