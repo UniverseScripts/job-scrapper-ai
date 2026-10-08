@@ -13,8 +13,6 @@ Tessellate,"['Python', 'Django', 'AI', 'Machine Learning']",GLOBAL,,False,Mid,Ba
 PermitFlow,"['Python', 'Django']",GLOBAL,,False,Staff,Fullstack,Fintech,https://permitflow.com,49230580,1786276265
 Bactrix,"['Python', 'LangGraph/LangChain', 'APIs', 'AI agents']",GLOBAL,,False,Senior,Backend,AI/Biotech,mailto:HR@bactrix.com,49260542,1786464959
 XP Health,"['React', 'Node.js']",ONSITE,200000.0,False,Senior,Fullstack,Healthtech,https://grnh.se/bhfswi9e5us,49278096,1786566361
-Oscilar.com,"['Python', 'Django', 'Java', 'Web SDK', 'AI']",GLOBAL,,False,Senior,Backend,Fintech,https://jobs.ashbyhq.com/oscilar?utm_source=HackerNews,49185103,1785947307
-Attendi,"['Python', 'Django', 'Machine Learning']",GLOBAL,72000.0,True,Mid,Backend,Healthtech,,49207434,1786091356
 Boost My School,"['Python', 'Django']",US_ONLY,157000.0,False,Senior,Backend,EdTech,https://www.boostmyschool.com/careers#senior-software-engineer,49213747,1786124161
 Earl,"['AI', 'Python']",ONSITE,,False,Mid,ML/AI,AI,mailto:chris@earl.partners,49275045,1786552381
 Evaboot,"['Python', 'AWS']",GLOBAL,70000.0,False,Mid,Backend,SaaS,https://forms.gle/NM9BLJyuS8FNitYc8,49270021,1786529064
@@ -24,55 +22,26 @@ Evan Lee,"['Python', 'Django']",GLOBAL,190000.0,False,Senior,Backend,Multi-Agent
 National Association of Realtors,"['Python', 'SQL']",US_ONLY,,False,Mid,Data,Fintech,https://realtors.applicantstack.com/x/detail/a2yfvt49zurx,49289931,1786645033
 Deepline,"['TypeScript', 'Python', 'Next.js', 'Postgres']",ONSITE,190000.0,False,Senior,Fullstack,GTM infrastructure,https://code.deepline.com/careers,49215237,1786131151
 Chronograph,"['Kubernetes', 'Prometheus', 'Grafana', 'Terraform', 'AWS', 'GitHub Actions', 'PostgreSQL', 'Node.js', 'Ruby']",GLOBAL,187500.0,False,Senior,DevOps,Fintech,,49246737,1786382234
-Lago,"['Python', 'Billing platform']",EU_ONLY,,False,Senior,Sales,SaaS,https://jobs.ashbyhq.com/lago/d6f718de-f99f-44d8-9c15-f0c5e02efff2,49194503,1786008954
-Estuary,"['Go', 'Rust']",GLOBAL,,False,Senior,Backend,Fintech,https://estuary.dev/,49198416,1786031765
 Prophet Town LLC,"['Python', 'Django']",GLOBAL,150000.0,False,Mid,Backend,Tech Agency,,49295167,1786686907
 SpendAi,"['Python', 'Django']",ONSITE,100000.0,False,Senior,Backend,Fintech,https://wellfound.com/recruit/jobs/4574551,49262437,1786472715
 Odin,"['Python', 'Django', 'React', 'Node.js']",GLOBAL,,False,Senior,Backend,Fintech,,49271778,1786539809
-Aeqium,"['Python', 'Django', 'AI', 'GitHub Copilot', 'Claude Code']",HYBRID,132500.0,False,Mid,Fullstack,Fintech,,49200756,1786042405
 Torq,"['Ruby', 'TypeScript']",US_ONLY,90000.0,False,Junior,Backend,Healthtech,https://torq-interface.careers-page.com/jobs/50de7a3e-2bd7-4807-b47d-9654f4c99b78,49245007,1786375843
 ResortPass,"['Next.js', 'React', 'TypeScript', 'Tailwind', 'shadcn/ui', 'Rails', 'Node.js', 'Postgres', 'MongoDB', 'Playwright', 'Datadog']",ONSITE,170000.0,False,Senior,Frontend,SaaS,resortpass.com,49223303,1786206553
 Tyce AI,"['Python', 'Django', 'AI']",HYBRID,,False,Senior,Backend,AI,https://www.linkedin.com/company/tyce/jobs/,49216288,1786137122
 Statecraft,"['Python', 'Django']",US_ONLY,160000.0,False,Senior,Backend,Fintech,,49212807,1786119788
 SpendAi,"['Python', 'Django', 'LLM', 'Kaggle']",GLOBAL,,False,Senior,Backend,AI,https://adilshamim.me,49283824,1786616178
-DoubleVerify,"['Python', 'SQL', 'BigQuery', 'Cloud SQL', 'Cloud Datastore', 'Cloud Run (GCP)', 'Prefect', 'Docker', 'CI/CD', 'Git']",ONSITE,125000.0,False,Mid,Backend,AdTech,,49199157,1786034845
 Furtim Modus,"['Java', 'Aeron Transport', 'Aeron Cluster', 'Aeron Archive', 'Artio', 'Agrona', 'Adaptive Hydra']",HYBRID,187500.0,False,Mid,Backend,Fintech,https://www.furtimmodus.com/software-engineer,49215960,1786135184
-Yardstik,"['Python', 'Django']",GLOBAL,150000.0,False,Senior,Backend,Fintech,,49197178,1786026562
-Interview Resources,"['Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker', 'Vercel', 'AWS']",GLOBAL,250000.0,False,Mid,Fullstack,EdTech,,49207409,1786091061
 Vitabyte,"['Go', 'Echo', 'GORM', 'Postgres', 'Next.js', 'React', 'TypeScript', 'Kotlin', 'Jetpack Compose']",ONSITE,115000.0,False,Mid,Backend,Fintech,email george@vitabyte.com,49227630,1786239865
-AMD,"['Rust', 'LLVM', 'MLIR', 'C++']",ONSITE,,False,Senior,Backend,Semiconductor,,49193298,1785998449
 ,"['Python', 'Django', 'Database', 'LLM']",UNKNOWN,,False,Senior,Backend,Fintech,,49224620,1786214574
-Early-stage health & wellness startup,"['React Native', 'TypeScript', 'GCP', 'CI/CD']",US_ONLY,,False,Senior,Fullstack,Healthtech,https://www.doubling.io/careers/,49191343,1785980198
 Sitewire,"['React', 'React Native', 'Postgres', 'Ruby on Rails']",US_ONLY,130000.0,False,Mid,Fullstack,Fintech,,49267747,1786507913
-Lite Agent,"['Chrome extension', 'AI chat', 'Page automation', 'Voice input', 'Smart memory', 'Encrypted backups', 'OpenRouter']",GLOBAL,,False,Mid,Other,Fintech,,49196678,1786024138
-Ojin,"['TypeScript', 'React', 'Node.js', 'Python', 'WebRTC', 'WebSockets', 'AWS']",HYBRID,,False,Mid,Fullstack,AI,https://ojin.ai,49184927,1785946651
 DAT,"['Node.js', 'React', 'GraphQL', 'Kafka', 'k8s', 'AWS']",ONSITE,192000.0,False,Senior,Backend,Logistics,,49302719,1786731983
-Norm Ai,"['Python', 'Django']",GLOBAL,,False,Mid,Backend,Fintech,https://jobs.ashbyhq.com/norm-ai?utm_source=7ow8wN5o3g,49189557,1785966889
-Solution Street,"['Python', 'Java', 'Selenium', 'Spring', 'Kubernetes', 'async-io', 'SCPI', 'Keysight', 'Keithley']",US_ONLY,,False,Mid,Backend,Software Consulting,mailto:clittle@solutionstreet.com,49197049,1786025931
-Launchpad Technologies,"['Python', 'Django']",GLOBAL,,False,Mid,Backend,Fintech,https://grnh.se/wqeflx0e6us,49184766,1785945968
-Housecat,"['HTML', 'JavaScript', 'Go', 'SQLite', 'Postgres', 'Templ', 'HTMX', 'DBOS']",GLOBAL,,False,Senior,Fullstack,SaaS,https://news.ycombinator.com/user?id=noah,49187999,1785959323
 LiveKit,"['Rust', 'webRTC']",GLOBAL,,False,Staff,Backend,VoiceAI,https://jobs.ashbyhq.com/livekit/a1d10340-7cd9-4029-9a56-139232f4bd5d,49217319,1786144195
 Rhythm,"['C', 'C++', 'ARM Cortex-M', 'BLE', 'sensor integration']",ONSITE,195000.0,False,Senior,Embedded,Healthtech,mailto:kanishk@rhythmpap.com,49212543,1786118722
 Arcforma AI,"['Python', 'Django', 'LLM']",US_ONLY,90000.0,False,Senior,Backend,Fintech,jobs@arcforma.ai,49248055,1786388158
-GovStar,"['Python', 'React', 'TypeScript', 'Azure AI services', 'PostgreSQL', 'Kubernetes', 'Terraform', 'Helm', 'Go', 'AWS']",US_ONLY,,False,Senior,Backend,Fintech,https://www.govstar.us,49200866,1786042957
-FanPad,"['Angular', 'Node.js', 'PostgreSQL', 'AWS', 'Twilio', 'Mailgun']",GLOBAL,,False,Senior,Backend,MusicTech,mailto:sudip@fanpad.xyz,49202116,1786048385
-GTX,['C++'],HYBRID,,False,Senior,Backend,Fintech,https://gtx-uk-llp.careers-page.com/jobs/62ec210b-cf39-4e43-a779-a654cd4ac247,49194132,1786005792
-i4040,[],ONSITE,,False,Senior,Marketing,SaaS,mailto:i4040@pm.me,49197515,1786027812
-Adalat AI,"['Go', 'React', 'Next.js', 'k8s']",GLOBAL,,False,Mid,Backend,Fintech,https://www.adalat.ai/careers/engineering-lead,49192593,1785991906
 Stealth Startup,['Python'],US_ONLY,195000.0,False,Mid,Backend,,mailto:paulephraimebuka@gmail.com,49254584,1786433515
-,"['Java', 'Spring Boot', 'Microservices', 'REST APIs', 'React', 'Angular', 'Oracle', 'AWS', 'Java 8', 'Java 11', 'Java 17', 'Spring MVC', 'Hibernate', 'JPA', 'MySQL', 'PostgreSQL', 'Kafka', 'Docker', 'Kubernetes', 'Git', 'Jenkins', 'Maven', 'JUnit']",GLOBAL,,False,Senior,Backend,Enterprise Software,https://www.linkedin.com/in/kodali-bhavana98/,49185343,1785948228
-U.S. Bank,"['Python', 'LangGraph', 'LangChain', 'MCP', 'RAG', 'LoRA', 'PEFT', 'OpenAI', 'PyTorch', 'Spark', 'MLflow', 'Docker', 'Kubernetes', 'AWS', 'Azure', 'GCP']",GLOBAL,,False,Senior,ML/AI,Fintech,https://suneelkalva.com,49185076,1785947209
-Clearview Counseling Group,"['React', 'Apps Script', 'Sheets', 'Node.js']",US_ONLY,45000.0,False,Mid,Backend,Healthtech,,49203310,1786054233
-,"['Ruby', 'Rails', 'Hotwire', 'JavaScript', 'TypeScript', 'React', 'Vue', 'Svelte', 'Nest', 'Next', 'Nuxt', 'Tailwind', 'Postgres', 'Docker', 'CI/CD']",GLOBAL,,False,Senior,Backend,Fintech,https://www.linkedin.com/in/maxberdnikau/,49184940,1785946697
-Mosaic Wellness,"['JavaScript', 'Python', 'SQL']",ONSITE,,False,Junior,Backend,Healthtech,mailto:ayush.pawar@mosaicwellness.in,49194021,1786004775
-Talonic,"['AWS', 'Docker', 'Railway']",HYBRID,850000.0,False,Staff,DevOps,Fintech,jobs@talonic.ai,49206998,1786087471
-Matterhaul,"['Python', 'Django']",ONSITE,220000.0,False,Mid,Backend,Fintech,https://www.matterhaul.com/,49211731,1786115673
 UMH,"['Python', 'Django', 'Benthos', 'Docker', 'React']",ONSITE,70000.0,False,Senior,Backend,Manufacturing,https://www.umh.app,49232553,1786290809
-Turquoise,"['Python', 'Django']",US_ONLY,,False,Senior,Backend,Healthtech,https://jobs.ashbyhq.com/turquoise-health/fdcd9752-b372-467c-aec1-1419edee2c87,49186245,1785951714
-The Clarity Coaching,"['Python', 'Django', 'AI']",GLOBAL,,False,Lead,Backend,Coaching,https://www.linkedin.com/in/executivecoachana/,49187963,1785959157
 Connie Health,"['Python', 'Django', 'Looker', 'Claude']",HYBRID,175000.0,False,Senior,Backend,Healthtech,,49215140,1786130660
 Stpkr Technologies,"['Python', 'Django']",ONSITE,,False,Junior,Backend,Wearable Devices,,49262026,1786471077
-Freeform,"['Python', 'Django', 'AI']",ONSITE,,False,Senior,Backend,AI,,49204595,1786063501
 Pango,"['Rust', 'Golang']",GLOBAL,,False,Senior,Backend,Ecommerce,,49711313,1789474149
 Quobyte,"['C++', 'Python', 'Go', 'Kubernetes', 'OpenStack']",GLOBAL,,False,Mid,Backend,SaaS,,49523712,1788277998
 PlantingSpace,[],EU_ONLY,,False,Mid,Backend,Fintech,https://planting.space,49523950,1788278885
@@ -560,3 +529,28 @@ SentiLink,"['Python', 'Go', 'Rust', 'Scala', 'PostgreSQL', 'Snowflake', 'Kafka',
 Mechanize,[],GLOBAL,300000.0,False,Junior,Other,AI/ML,https://www.mechanize.work/apply/,49968228,1791223438
 Okta,[],ONSITE,,False,Senior,Product,SaaS,https://www.okta.com/company/careers/rd/senior-product-manager-auth0-ai-and-identity-products-auth0-7905576/,49968954,1791226729
 telli,[],ONSITE,,False,Mid,Other,Fintech,https://telli.com/careers,49968179,1791223156
+Ojin,"['Python', 'CUDA', 'PyTorch', 'Docker', 'Kubernetes']",EU_ONLY,,False,Senior,Backend,AI,,50004401,1791457820
+ICEYE,"['Go', 'Python', 'Kubernetes', 'Terraform', 'OpenTofu', 'Istio', 'Vault', 'LGTM stack', 'OpenTelemetry']",GLOBAL,,False,Senior,DevOps,SpaceTech,https://jobs.ashbyhq.com/iceye/cf6ba0e9-a750-4ee7-9b0a-8cb519cb7c39,50002587,1791442662
+Mastra,['TypeScript'],GLOBAL,,False,Mid,ML/AI,SaaS,https://jobs.ashbyhq.com/mastra/531a3fe8-556f-4b83-bee7-20374f67f980,49995549,1791392367
+NetBird,['Go'],GLOBAL,,False,Senior,Backend,Cybersecurity,https://netbird.io/careers,50001801,1791433438
+ChainSecurity,[],UNKNOWN,,True,Intern,Other,Crypto,https://chainsecurity.com/,50003866,1791453453
+Superset,['TypeScript'],ONSITE,200000.0,False,Senior,Fullstack,SaaS,https://superset.sh/careers,50000038,1791414855
+,[],UNKNOWN,,False,Unknown,Other,,,49993917,1791385824
+Flowstate,"['TypeScript', 'React', 'Postgres', 'AI']",ONSITE,,False,Senior,Fullstack,AI,,49991656,1791375104
+Cleverbase,"['Scala', 'Cats', 'Cats-Effect', 'http4s', 'fs2', 'doobie', 'gRPC', 'Postgres', 'HSM', 'TypeScript', 'React', 'NestJS', 'oRPC', 'Drizzle', 'Playwright']",ONSITE,,False,Mid,Fullstack,Fintech,,49998400,1791405043
+BREAKFAST Studio (kinetic art),"['Embedded C', 'Linux']",GLOBAL,,False,Senior,Other,Creative Tech,,49994263,1791387096
+Cloudflare,"['Rust', 'C++', 'DataFusion', 'Arrow', 'Parquet', 'Apache Iceberg', 'R2', 'Arroyo']",GLOBAL,,False,Senior,Backend,Internet Infrastructure,https://job-boards.greenhouse.io/cloudflare/jobs/7093840,49980354,1791302118
+Coast,"['Python', 'React', 'Node.js', 'SQL']",GLOBAL,,False,Mid,Fullstack,Fintech,https://job-boards.greenhouse.io/coast/jobs/6215755004,49996333,1791395656
+Manifest,"['TypeScript', 'Node.js', 'Go', 'Python', 'MongoDB']",US_ONLY,180000.0,False,Senior,Backend,Cybersecurity,https://job-boards.greenhouse.io/manifest/jobs/4398657009,49987144,1791338977
+Quantum Minds,"['LLVM', 'C', 'C++', 'Python', 'libFuzzer', 'AFL++', 'Honggfuzz']",US_ONLY,,False,Senior,Backend,Cybersecurity,,49979600,1791299139
+Buoyant,"['Go', 'Rust', 'gRPC', 'Kubernetes', 'Service Mesh', 'Networking']",GLOBAL,,False,Senior,Backend,Cloud Infrastructure,,49996914,1791397889
+Flow Traders,"['Python', 'Ray', 'numpy', 'PyTorch', 'pandas']",GLOBAL,,True,Senior,ML/AI,Fintech,https://www.flowtraders.com/careers/job-description/7431246,49986633,1791335558
+Empower Pharmacy,"['Java', 'Spring Boot', 'React', 'Next.js', 'Azure', 'Kubernetes', 'SQL Server']",GLOBAL,,False,Senior,Fullstack,Healthtech,,49982648,1791313595
+Fig,"['Kotlin', 'React', 'TypeScript', 'GCP', 'Postgres', 'Terraform']",ONSITE,250000.0,False,Senior,Fullstack,Foodtech,,49981582,1791307838
+Oscilar.com,"['Java', 'Web SDK', 'Machine Learning']",UNKNOWN,,False,Senior,Other,Fintech,https://jobs.ashbyhq.com/oscilar?utm_source=HackerNews,49980976,1791305039
+Coder,[],UNKNOWN,,False,Mid,Other,AI,,49980680,1791303619
+RealResponse,['Ruby on Rails'],US_ONLY,,False,Mid,Backend,Sportstech,https://www.realresponse.com,49980137,1791301160
+depproof,[],US_ONLY,,False,Mid,Other,Cybersecurity,https://depproof.com,49982803,1791314452
+LiveKit,['webRTC'],UNKNOWN,,False,Mid,Other,SaaS,https://jobs.ashbyhq.com/livekit/463e2769-bb85-4429-96a3-3a175eb228cd?departmentId=3f867ed5-acad-4eee-bf8a-68d5af0be363&utm_source=1bpyr8q375,49997244,1791399351
+Purchasely,"['Swift', 'StoreKit', 'UIKit', 'SwiftUI']",GLOBAL,,False,Senior,Mobile,SaaS,,49980867,1791304589
+Freeform,[],ONSITE,,False,Mid,Other,Manufacturing,,49986260,1791333166
