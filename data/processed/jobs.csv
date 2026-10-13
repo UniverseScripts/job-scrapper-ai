@@ -2,25 +2,16 @@ company,tech_stack,remote_type,salary_year_usd,visa_sponsorship,experience_level
 Resortpass.com,"['Next.js', 'React', 'TypeScript', 'Tailwind', 'Playwright', 'Datadog']",ONSITE,170000.0,False,Senior,Backend,Travel,,49315850,1786842323
 Olli Technologies,"['Python', 'Django']",US_ONLY,,False,Senior,Backend,Edtech,https://wellfound.com/l/2CyQz1,49313253,1786820195
 Choco,"['Typescript', 'AWS']",GLOBAL,,False,Senior,Backend,Fintech,https://app.careerpuck.com/job-board/choco/job/079ab75d-8de9-4b60-8ed1-4acd6d08b6c3,49296620,1786701271
-Origamics,"['FastAPI', 'Postgres', 'S3', 'Python', 'Render', 'AWS', 'Codex', 'Claude', 'Kimi', 'Qwen']",GLOBAL,,False,Senior,Backend,AI,https://www.origamics.ai/join-us,49269646,1786525800
 Alaffia Health,"['TypeScript', 'Node.js', 'GraphQL', 'PostgreSQL', 'AWS', 'React']",HYBRID,,False,Senior,Backend,Healthtech,,49291876,1786655203
-Joulent,"['Python', 'SQL', 'Airflow', 'containers', 'IaC']",HYBRID,,False,Senior,Backend,Energy,https://joulent.github.io/careers/,49267485,1786504928
-Silicon45,"['kdb+/q', 'C']",Hybrid,,False,Senior,Backend,Data Analytics,mailto:amir@silicon45.com,49265260,1786486749
 ,"['PowerShell', 'Windows Server', 'Azure', 'AWS', 'Linux', 'Active Directory', 'SCCM', 'VMware Hyper V', 'Dell PowerEdge iDRAC', 'SIEM', 'R', 'Commvault', 'DNS', 'WiFi', 'Toast', 'network security', 'Excel']",UNKNOWN,,False,Senior,Backend,Healthcare,,49282255,1786601015
-Ai2 / Allen Institute for AI,['Python'],ONSITE,146000.0,False,Senior,Backend,AI,https://job-boards.greenhouse.io/thealleninstitute/jobs/8110068,49267985,1786510937
 Tessellate,"['Python', 'Django', 'AI', 'Machine Learning']",GLOBAL,,False,Mid,Backend,Healthtech,,49280288,1786580167
 XP Health,"['React', 'Node.js']",ONSITE,200000.0,False,Senior,Fullstack,Healthtech,https://grnh.se/bhfswi9e5us,49278096,1786566361
 Earl,"['AI', 'Python']",ONSITE,,False,Mid,ML/AI,AI,mailto:chris@earl.partners,49275045,1786552381
-Evaboot,"['Python', 'AWS']",GLOBAL,70000.0,False,Mid,Backend,SaaS,https://forms.gle/NM9BLJyuS8FNitYc8,49270021,1786529064
 Orbit Technologies,[],ONSITE,,False,Mid,Fullstack,Neurotechnology,mailto:Mon@orbit.engineering,49292852,1786662406
 National Association of Realtors,"['Python', 'SQL']",US_ONLY,,False,Mid,Data,Fintech,https://realtors.applicantstack.com/x/detail/a2yfvt49zurx,49289931,1786645033
 Prophet Town LLC,"['Python', 'Django']",GLOBAL,150000.0,False,Mid,Backend,Tech Agency,,49295167,1786686907
-SpendAi,"['Python', 'Django']",ONSITE,100000.0,False,Senior,Backend,Fintech,https://wellfound.com/recruit/jobs/4574551,49262437,1786472715
-Odin,"['Python', 'Django', 'React', 'Node.js']",GLOBAL,,False,Senior,Backend,Fintech,,49271778,1786539809
 SpendAi,"['Python', 'Django', 'LLM', 'Kaggle']",GLOBAL,,False,Senior,Backend,AI,https://adilshamim.me,49283824,1786616178
-Sitewire,"['React', 'React Native', 'Postgres', 'Ruby on Rails']",US_ONLY,130000.0,False,Mid,Fullstack,Fintech,,49267747,1786507913
 DAT,"['Node.js', 'React', 'GraphQL', 'Kafka', 'k8s', 'AWS']",ONSITE,192000.0,False,Senior,Backend,Logistics,,49302719,1786731983
-Stpkr Technologies,"['Python', 'Django']",ONSITE,,False,Junior,Backend,Wearable Devices,,49262026,1786471077
 Pango,"['Rust', 'Golang']",GLOBAL,,False,Senior,Backend,Ecommerce,,49711313,1789474149
 Quobyte,"['C++', 'Python', 'Go', 'Kubernetes', 'OpenStack']",GLOBAL,,False,Mid,Backend,SaaS,,49523712,1788277998
 PlantingSpace,[],EU_ONLY,,False,Mid,Backend,Fintech,https://planting.space,49523950,1788278885
@@ -546,3 +537,11 @@ Aarhus University,"['Python', 'PyTorch']",GLOBAL,,False,Senior,ML/AI,Academic,ht
 StartupHakk,"['C#', '.NET', 'React', 'SQL', 'HTML/CSS', 'Prompt engineering', 'LLM integration', 'open-source models', 'AI features']",US_ONLY,,False,Intern,Fullstack,AI,https://startuphakk.com/jobs,50059584,1791825468
 Matcha.fm,[],GLOBAL,,False,Senior,Other,SaaS,https://matcha.fm/apply/fse,50056667,1791813933
 General Intelligence Holdings,['Python'],UNKNOWN,,False,Senior,Other,Fintech,,50055019,1791805869
+Irash Tech,"['Next.js', 'React', 'Node.js', 'React Native', 'Expo', 'Python', 'n8n']",GLOBAL,,False,Senior,Other,AI,https://www.irashtech.com/careers/business-development-manager,50068986,1791883879
+Typify,"['Angular', 'NestJS', 'Postgres']",US_ONLY,100000.0,True,Senior,Fullstack,EdTech,https://typify.dev/jobs/view/189,50063001,1791838823
+Indiana Microelectronics LLC,"['Python', 'MATLAB', 'HFSS', 'Keysight ADS', 'Microwave Office', 'Altium']",ONSITE,,False,Mid,Other,Other,,50062997,1791838797
+esumry.com,['AWS'],ONSITE,,False,Mid,Fullstack,LegalTech,https://wellfound.com/jobs/4824572-software-engineer,50063248,1791840184
+,['Swift'],UNKNOWN,,False,Senior,Mobile,,https://myportfilio-16732.web.app/,50066205,1791861657
+Sendery,"['Swift', 'SwiftUI', 'UIKit']",UNKNOWN,,False,Senior,Mobile,SaaS,,50066343,1791862830
+HiO (hio.ai),[],US_ONLY,150000.0,False,Senior,Other,SaaS,,50061040,1791831116
+Estuary,[],GLOBAL,,False,Senior,Other,Data,https://estuary.dev/,50071142,1791896980
