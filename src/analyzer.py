@@ -50,6 +50,21 @@ ESTIMATED_TOKENS_PER_REQUEST = 1500
 JOBS_PATH = os.path.join("data", "processed", "jobs.csv")
 MAX_ROW_AGE_DAYS = int(os.getenv("JOB_MAX_AGE_DAYS", "62"))
 
+# Posts the model could not turn into a single job, so they are never sent again.
+SKIPPED_PATH = os.path.join("data", "processed", "skipped.csv")
+
+
+class NotSingleJobError(Exception):
+    """The model answered with something other than one JSON object.
+
+    A list means the post advertises several jobs (e.g. a recruiter's roundup). The dataset holds
+    one row per HN post, so such posts are recorded as skipped instead of extracted.
+    """
+
+    def __init__(self, reason: str):
+        super().__init__(reason)
+        self.reason = reason
+
 
 def _is_daily_limit(error: Exception) -> bool:
     """Groq names the exhausted limit in the message, e.g. 'tokens per day (TPD)'."""
@@ -117,12 +132,13 @@ class JobAnalyzer:
             
         return clean_text
 
-    # Transient errors (network, malformed JSON) are retried here. Rate limits, a missing model
-    # and a bad key are not: retrying those only burns quota, so they go straight to the caller.
+    # Transient errors (network, malformed JSON) are retried here. Rate limits, a missing model,
+    # a bad key and a non-object answer are not: retrying those only burns quota, so they go
+    # straight to the caller.
     @retry(
         wait=wait_exponential(min=1, max=10),
         stop=stop_after_attempt(3),
-        retry=retry_if_not_exception_type((RateLimitError, NotFoundError, AuthenticationError)),
+        retry=retry_if_not_exception_type((RateLimitError, NotFoundError, AuthenticationError, NotSingleJobError)),
         reraise=True,
     )
     def analyze_job(self, text: str) -> Dict[str, Any]:
@@ -157,10 +173,11 @@ class JobAnalyzer:
             cleaned_response = self._clean_json_response(response_text)
             
             try:
-                return json.loads(cleaned_response)
+                parsed = json.loads(cleaned_response)
             except json.JSONDecodeError as e:
                 print(f"\n[ERROR] JSON Cleanup Failed. Raw Response:\n{response_text}\n")
                 # Fallback: try to find first { and last }
+                parsed = None
                 try:
                     start = response_text.find("{")
                     end = response_text.rfind("}")
@@ -169,11 +186,21 @@ class JobAnalyzer:
                         candidate = response_text[start:end+1]
                         if "}{" in candidate:
                             candidate = candidate.split("}{")[0] + "}"
-                        return json.loads(candidate)
+                        parsed = json.loads(candidate)
                 except:
                     pass
-                raise e
-            
+                if parsed is None:
+                    raise e
+
+            # One post must yield one job. A list means several jobs in one post.
+            if isinstance(parsed, list):
+                raise NotSingleJobError("multiple_jobs")
+            if not isinstance(parsed, dict):
+                raise NotSingleJobError("not_an_object")
+            return parsed
+
+        except NotSingleJobError:
+            raise
         except Exception as e:
             print(f"Extraction Failed ({self.model_name}): {e}")
             raise e
@@ -239,8 +266,8 @@ class JobAnalyzer:
                     data["remote_type"] = "GLOBAL"
             
             return data
-        except (RateLimitError, NotFoundError, AuthenticationError):
-            # Handled by process_comments(): wait, stop for the day, or fail the run.
+        except (RateLimitError, NotFoundError, AuthenticationError, NotSingleJobError):
+            # Handled by process_comments(): wait, stop for the day, fail the run, or skip the post.
             raise
         except Exception as e:
             print(f"Error on item {comment.get('id')}: {e}")
@@ -272,20 +299,29 @@ class JobAnalyzer:
         known_ids: Set[str],
         existing: pd.DataFrame,
         out_path: str = JOBS_PATH,
-    ) -> Tuple[List[Dict], str, Dict[str, int]]:
+        skipped_ids: Optional[Set[str]] = None,
+        skipped_path: str = SKIPPED_PATH,
+    ) -> Tuple[List[Dict], List[Dict], str, Dict[str, int]]:
         """
-        Extracts only comments that are not already in the dataset, within a daily token budget.
+        Extracts only comments that are not already in the dataset or the skip list, within a
+        daily token budget.
 
-        Returns (new_rows, stop_reason, stats). stop_reason is one of:
+        Returns (new_rows, new_skips, stop_reason, stats). stop_reason is one of:
         "complete", "budget", "daily_limit", or "fatal: <error>".
         """
+        skipped_ids = skipped_ids or set()
+        existing_skipped = load_skipped(skipped_path)
         results: List[Dict] = []
-        stats = {"thread": len(comments), "already_extracted": 0, "junk": 0, "pending": 0, "failed": 0}
+        skipped: List[Dict] = []
+        stats = {"thread": len(comments), "already_extracted": 0, "previously_skipped": 0, "junk": 0,
+                 "pending": 0, "failed": 0, "skipped": 0}
 
         pending = []
         for comment in comments:
             if str(comment.get("id")) in known_ids:
                 stats["already_extracted"] += 1
+            elif str(comment.get("id")) in skipped_ids:
+                stats["previously_skipped"] += 1
             elif self.is_junk(comment.get("text", "")):
                 stats["junk"] += 1
             else:
@@ -294,6 +330,7 @@ class JobAnalyzer:
 
         print(
             f"Thread has {stats['thread']} comments: {stats['already_extracted']} already extracted, "
+            f"{stats['previously_skipped']} previously skipped, "
             f"{stats['junk']} filtered as junk, {stats['pending']} to extract "
             f"(model {self.model_name}, budget {DAILY_TOKEN_BUDGET} tokens)."
         )
@@ -309,10 +346,14 @@ class JobAnalyzer:
                 break
 
             result = None
+            skip_reason = None
             rate_limit_retries = 0
             while True:
                 try:
                     result = self.process_single_item(comment)
+                    break
+                except NotSingleJobError as e:
+                    skip_reason = e.reason
                     break
                 except RateLimitError as e:
                     if _is_daily_limit(e):
@@ -341,6 +382,12 @@ class JobAnalyzer:
                 results.append(result)
                 request_tokens = self.last_request_tokens or ESTIMATED_TOKENS_PER_REQUEST
                 total_tokens_used += request_tokens
+            elif skip_reason:
+                skipped.append({"hn_id": str(comment.get("id")), "reason": skip_reason, "first_seen": int(time.time())})
+                stats["skipped"] += 1
+                request_tokens = self.last_request_tokens or ESTIMATED_TOKENS_PER_REQUEST
+                total_tokens_used += request_tokens
+                print(f"Item {comment.get('id')}: skipped ({skip_reason}); it will not be sent again.")
             else:
                 stats["failed"] += 1
                 request_tokens = ESTIMATED_TOKENS_PER_REQUEST
@@ -353,8 +400,10 @@ class JobAnalyzer:
             # Checkpoint: merged with the existing dataset, so a crash mid-run never shrinks it.
             if results and len(results) % 10 == 0:
                 save_jobs(merge_jobs(existing, results), out_path)
+            if skip_reason:
+                save_skipped(existing_skipped, skipped, skipped_path)
 
-        return results, stop_reason, stats
+        return results, skipped, stop_reason, stats
 
 
 def load_jobs(path: str = JOBS_PATH) -> pd.DataFrame:
@@ -391,6 +440,33 @@ def save_jobs(df: pd.DataFrame, out_path: str = JOBS_PATH) -> None:
     os.replace(tmp_path, out_path)
 
 
+def load_skipped(path: str = SKIPPED_PATH) -> pd.DataFrame:
+    """Loads the skip list; a missing or empty file yields an empty frame."""
+    try:
+        return pd.read_csv(path, dtype={"hn_id": str})
+    except (FileNotFoundError, pd.errors.EmptyDataError):
+        return pd.DataFrame()
+
+
+def save_skipped(existing: pd.DataFrame, new_rows: List[Dict], out_path: str = SKIPPED_PATH) -> None:
+    """Adds new skips to the list, keeping the first sighting of each hn_id, and writes atomically."""
+    if not new_rows:
+        return
+    new_df = pd.DataFrame(new_rows)
+    combined = new_df if existing.empty else pd.concat([existing, new_df], ignore_index=True)
+    combined["hn_id"] = combined["hn_id"].astype(str)
+    combined = combined.drop_duplicates(subset="hn_id", keep="first").reset_index(drop=True)
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    tmp_path = out_path + ".tmp"
+    combined.to_csv(tmp_path, index=False)
+    os.replace(tmp_path, out_path)
+
+
+def run_failed(stats: Dict[str, int], new_rows: List[Dict], new_skips: List[Dict], stop_reason: str) -> bool:
+    """True when posts were pending, the run finished, and not one was extracted or skipped."""
+    return bool(stats.get("pending")) and not new_rows and not new_skips and stop_reason == "complete"
+
+
 if __name__ == "__main__":
     print("Testing JobAnalyzer (Groq)...")
     analyzer = JobAnalyzer()
@@ -408,7 +484,12 @@ if __name__ == "__main__":
         known_ids = set(existing["hn_id"].astype(str)) if "hn_id" in existing.columns else set()
         print(f"Existing dataset: {len(existing)} jobs.")
 
-        new_rows, stop_reason, stats = analyzer.process_comments(comments, known_ids, existing, JOBS_PATH)
+        existing_skipped = load_skipped(SKIPPED_PATH)
+        skipped_ids = set(existing_skipped["hn_id"].astype(str)) if "hn_id" in existing_skipped.columns else set()
+
+        new_rows, new_skips, stop_reason, stats = analyzer.process_comments(
+            comments, known_ids, existing, JOBS_PATH, skipped_ids, SKIPPED_PATH
+        )
 
         if new_rows:
             merged = merge_jobs(existing, new_rows)
@@ -417,12 +498,17 @@ if __name__ == "__main__":
         else:
             print(f"No new jobs added; {JOBS_PATH} unchanged (stop: {stop_reason}).")
 
+        if new_skips:
+            save_skipped(existing_skipped, new_skips, SKIPPED_PATH)
+            print(f"Skipped {len(new_skips)} posts that are not a single job; recorded in {SKIPPED_PATH}.")
+
         # Fail the run (and so the workflow) only when something is actually broken:
         # a missing model or bad key, or every pending extraction failing for another reason.
         # Running out of today's quota is expected; the next run continues from where this one stopped.
+        # A skipped post is a resolved post, not a failure.
         if stop_reason.startswith("fatal"):
             raise SystemExit(f"Extraction stopped: {stop_reason}")
-        if stats["pending"] and not new_rows and stop_reason == "complete":
+        if run_failed(stats, new_rows, new_skips, stop_reason):
             raise SystemExit(f"All {stats['pending']} pending extractions failed (model: {analyzer.model_name}).")
     else:
         # Mini Test

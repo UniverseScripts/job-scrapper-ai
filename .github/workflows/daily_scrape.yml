@@ -42,6 +42,8 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data/processed/jobs.csv
+          # Posts that are not a single job; recorded so they are never sent to the model again.
+          if [ -f data/processed/skipped.csv ]; then git add data/processed/skipped.csv; fi
           if git diff --cached --quiet; then
             echo "Dataset unchanged."
           else
