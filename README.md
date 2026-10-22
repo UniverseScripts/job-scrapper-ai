@@ -8,6 +8,7 @@ A "Stateless" Market Intelligence Dashboard that scrapes Hacker News "Who is Hir
 *   **Auto-Scraper:** Fetches latest HN threads automatically.
 *   **AI Enrichment:** an LLM on Groq extracts `Job Role`, `Experience`, `Industry`, `Tech Stack`, and `Salary`. Set `GROQ_MODEL` to change the model (Groq retired `llama-3.1-8b-instant` for free-tier accounts on 2026-08-16).
 *   **Incremental, quota-aware runs:** each run extracts only posts not already in `jobs.csv`, merges them in, and drops rows older than `JOB_MAX_AGE_DAYS`. When the daily token budget or Groq's daily limit is reached, the run saves its progress and the next run continues. A failed or partial run never shrinks or empties the dataset.
+*   **One row per post:** a post the model reads as several jobs (e.g. a recruiter's roundup) is not extracted. Its ID is recorded in `data/processed/skipped.csv` and it is never sent to the model again.
 
 ### Tuning (environment variables)
 | Variable | Default | Purpose |
