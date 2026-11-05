@@ -7,7 +7,6 @@ Catalyst·Wayfare AI,['Python'],US_ONLY,,False,Senior,ML/AI,Fintech,https://cata
 Ours Privacy,"['AWS', 'TypeScript', 'Node.js']",US_ONLY,,False,Senior,DevOps,Healthtech,https://oursprivacy.com/careers,49664325,1789156012
 Cider Consulting,"['Python', 'JavaScript', 'React', 'Node.js', 'AWS', 'Docker', 'Kubernetes', 'CI/CD']",US_ONLY,,False,Senior,Fullstack,Consulting,,49656171,1789123173
 Lumen Labs,"['ROS2', 'LiDAR', 'depth sensors', 'IMU', 'encoders']",ONSITE,,False,Senior,Other,Robotics,https://lumenresearch.co,49667711,1789176564
-Apex Dental Partners,"['Rails', 'React', 'Electron', 'Go', 'C#', '.NET', 'AWS']",US_ONLY,,False,Mid,Fullstack,Healthtech,,49553487,1788456114
 Anterior,"['Python', 'Go']",ONSITE,230000.0,False,Senior,Backend,Healthtech,,49649994,1789073448
 OpenRent,"['Python', 'Django', 'React', 'Node.js']",ONSITE,110000.0,False,Senior,Fullstack,Property Tech,https://www.openrent.co.uk/jobs,49626445,1788961353
 Netrias,"['Python', 'Machine Learning']",ONSITE,,False,Senior,ML/AI,Healthtech,www.netrias.com/careers,49627985,1788967015
@@ -20,27 +19,14 @@ Whistle Robotics,[],GLOBAL,,False,Senior,Other,Robotics,,49611044,1788878648
 Endless Access,"['Node.js', 'Vue', 'Apollo', 'GraphQL']",ONSITE,200000.0,False,Senior,Fullstack,Edtech,https://endlessaccess.bamboohr.com/careers/33,49567458,1788542402
 Langfuse,[],GLOBAL,,False,Mid,Other,AI/LLM,,49609343,1788870135
 Valkyrie Aero,[],US_ONLY,,False,Mid,Other,Defense,https://valkyrie-aero.breezy.hr/,49578811,1788630002
-Natera,"['React', 'Typescript', 'Postgres']",GLOBAL,150000.0,False,Senior,Fullstack,Genomics Tech,https://natera.com,49553119,1788454566
-Flow Traders,"['Python', 'Ray', 'numpy', 'PyTorch', 'pandas']",ONSITE,,True,Senior,ML/AI,Fintech,https://lnkd.in/dWhh_m28,49559854,1788489225
-Confido Legal,"['TypeScript', 'React', 'Next.js', 'AWS', 'Pulumi', 'Docker', 'ECS', 'GraphQL']",US_ONLY,,False,Senior,Fullstack,Legaltech,https://careers.confidolegal.com/careers/sr-engineer,49552564,1788452464
-Springcraft,[],GLOBAL,,False,Mid,Other,Manufacturing,https://www.springcraft.ai/careers/?role=manufacturing-engineer,49555479,1788464003
 Turquoise,[],US_ONLY,,False,Senior,Backend,Healthtech,https://jobs.ashbyhq.com/turquoise-health/fdcd9752-b372-467c-aec1-1419edee2c87,49612508,1788884466
-MIRA,"['C++', 'Rust', 'RTOS', 'BLE', 'Embedded Linux', 'Microcontrollers', 'Sensors', 'Audio', 'Power Optimization', 'Device Communication', 'Debugging']",ONSITE,,False,Mid,Other,Hardware,https://go.trymira.com/pages/firmware-engineer/,49552294,1788451550
-Tandem Health,[],ONSITE,,False,Mid,Product,Healthtech,https://tandemhealth.ai/about/careers,49553901,1788457821
-SwingVision,[],ONSITE,,False,Mid,Other,Sports Tech,,49559434,1788485503
-Crossref,"['AWS', 'Terraform', 'Java', 'Clojure', 'Elasticsearch', 'PostgreSQL']",UNKNOWN,120000.0,False,Senior,DevOps,Academic Publishing,,49562582,1788516367
-Aurora Energy Research,[],ONSITE,,False,Unknown,Backend,Energy,https://careers.auroraer.com/,49564474,1788529164
-Harmonic,[],US_ONLY,95000.0,False,Mid,Other,Telecom,,49564322,1788528435
-Akkio,"['Python', 'TypeScript']",GLOBAL,200000.0,False,Senior,Fullstack,Adtech,https://www.akkio.com/jobs,49554223,1788459282
 Newton's Tree,"['Linux', 'Kubernetes', 'JSON', 'YAML', 'Python', 'SQL', 'HL7v2', 'FHIR', 'DICOM']",ONSITE,,False,Senior,DevOps,Healthtech,,49608356,1788863406
 LiveKit,['webRTC'],GLOBAL,,False,Mid,Other,SaaS,https://jobs.ashbyhq.com/livekit/463e2769-bb85-4429-96a3-3a175eb228cd,49570095,1788555376
 ,[],US_ONLY,100000.0,False,Senior,Other,,,49598799,1788790889
-AiMi,"['React', 'TypeScript', 'Node.js', 'AWS Lambda']",GLOBAL,,False,Mid,Fullstack,Fintech,,49552714,1788452957
 ,[],US_ONLY,180000.0,False,Senior,Other,SaaS,,49601673,1788807270
 Albert,[],GLOBAL,750000.0,False,Senior,Other,Fintech,,49615435,1788895158
 ,"['Ruby on Rails', 'React', 'Typescript', 'PHP Laravel', 'MySQL', 'Psql', 'AWS']",UNKNOWN,,False,Mid,Fullstack,,,49625444,1788956870
 Tether,[],GLOBAL,,False,Senior,Other,Crypto,https://careers.tether.io/o/technical-lead-gpu-infrastructure-pakistan?source=Hackernews,49713455,1789483879
-vCluster Labs,"['Kubernetes', 'kubebuilder', 'controller-runtime', 'client-go']",GLOBAL,140000.0,False,Senior,Backend,SaaS,https://www.vcluster.com/careers?ashby_jid=516c8859-83be-4535-8d2d-32a305a07e6d#jobs,49555567,1788464238
 Matterhaul,[],ONSITE,230000.0,False,Senior,ML/AI,Supply Chain,https://www.matterhaul.com/,49613617,1788888884
 Legal Ark AI,[],US_ONLY,,False,Senior,Other,Legaltech,,49642977,1789044974
 Freeform,[],ONSITE,,False,Mid,Other,Manufacturing,,49635387,1788992589
@@ -508,3 +494,14 @@ Special,[],ONSITE,250000.0,False,Senior,Other,AI,special.co/careers,50353641,179
 Sphinx Defense,[],US_ONLY,,False,Mid,Backend,Defense,,50359595,1793748134
 Estuary,['Rust'],GLOBAL,,False,Senior,Backend,Data,https://estuary.dev/,50356058,1793730519
 ,"['TypeScript', 'React', 'Next.js', 'Node.js', 'Fastify', 'React Native', 'PostgreSQL', 'Prisma', 'Supabase', 'Anthropic SDK', 'LLM pipelines', 'Vitest', 'Jest', 'CI/CD']",UNKNOWN,,False,Senior,Fullstack,Crypto,,50353980,1793722908
+VictoriaMetrics,[],GLOBAL,,False,Senior,Other,Observability,https://careers.victoriametrics.com/,50380208,1793891988
+ChainSecurity,[],UNKNOWN,,True,Intern,Other,Crypto,https://chainsecurity.com/,50380439,1793892947
+N26,"['SRE', 'Networking', 'Data Platform']",GLOBAL,,True,Senior,DevOps,Fintech,https://n26.com/en-eu/careers,50377000,1793870408
+ICEYE,"['Go', 'Python', 'Kubernetes', 'Terraform', 'Istio', 'Vault', 'OpenTelemetry']",GLOBAL,,False,Senior,DevOps,SpaceTech,https://jobs.ashbyhq.com/iceye/cf6ba0e9-a750-4ee7-9b0a-8cb519cb7c39,50376253,1793864144
+"COi Rubber Products, Inc.",[],US_ONLY,,False,Mid,Other,Industrial Manufacturing,,50377145,1793871445
+Furtim Modus,"['Java', 'Aeron', 'Artio', 'Agrona', 'Hydra']",ONSITE,150000.0,False,Mid,Backend,Fintech,https://www.furtimmodus.com/software-engineer,50372966,1793835539
+Matcha.fm,"['Python', 'Node.js']",GLOBAL,,False,Senior,Fullstack,SaaS,https://matcha.fm/apply/fse,50369728,1793817529
+Oscilar.com,"['Java', 'JavaScript', 'SQL']",UNKNOWN,,False,Senior,Backend,Fintech,https://jobs.ashbyhq.com/oscilar?utm_source=HackerNews,50369581,1793816882
+Kaida,['AI'],UNKNOWN,,False,Senior,Frontend,AI,,50370710,1793822366
+,[],GLOBAL,750000.0,False,Mid,Fullstack,Fintech,,50373706,1793840783
+SentiLink,"['Python', 'Go', 'Rust', 'Scala', 'PostgreSQL', 'Snowflake', 'Kafka', 'Redis', 'Terraform', 'Kubernetes', 'XGBoost', 'PyTorch']",GLOBAL,,False,Senior,Backend,Fintech,https://jobs.ashbyhq.com/sentilink?utm_source=hacker_news,50370932,1793823622
