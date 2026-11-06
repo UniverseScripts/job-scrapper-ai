@@ -12,16 +12,11 @@ OpenRent,"['Python', 'Django', 'React', 'Node.js']",ONSITE,110000.0,False,Senior
 Netrias,"['Python', 'Machine Learning']",ONSITE,,False,Senior,ML/AI,Healthtech,www.netrias.com/careers,49627985,1788967015
 Obi9,"['React', 'TypeScript', 'Node.js', 'Elixir', 'Python']",GLOBAL,,False,Mid,Fullstack,Fintech,https://obi9.ai/jobs/full-stack-engineer,49661611,1789145875
 ,"['Python', 'ML', 'Docker', 'Kubernetes', 'CI/CD']",GLOBAL,170000.0,False,Mid,ML/AI,AI,,49595476,1788769140
-Supero,"['Kubernetes', 'GCP', 'AWS', 'CI/CD']",GLOBAL,,False,Senior,DevOps,SaaS,https://www.supero.dev/careers/cloud-platform-engineer/,49573833,1788591349
-Deeter Analytics,['Python'],GLOBAL,,False,Junior,ML/AI,Fintech,https://jobs.ashbyhq.com/deeter-analytics/2c12339b-d302-427c-9a73-d825b4b942b0,49571280,1788563552
-PermitFlow,[],GLOBAL,,False,Staff,Fullstack,Construction Tech,https://permitflow.com,49576039,1788612478
 Whistle Robotics,[],GLOBAL,,False,Senior,Other,Robotics,,49611044,1788878648
-Endless Access,"['Node.js', 'Vue', 'Apollo', 'GraphQL']",ONSITE,200000.0,False,Senior,Fullstack,Edtech,https://endlessaccess.bamboohr.com/careers/33,49567458,1788542402
 Langfuse,[],GLOBAL,,False,Mid,Other,AI/LLM,,49609343,1788870135
 Valkyrie Aero,[],US_ONLY,,False,Mid,Other,Defense,https://valkyrie-aero.breezy.hr/,49578811,1788630002
 Turquoise,[],US_ONLY,,False,Senior,Backend,Healthtech,https://jobs.ashbyhq.com/turquoise-health/fdcd9752-b372-467c-aec1-1419edee2c87,49612508,1788884466
 Newton's Tree,"['Linux', 'Kubernetes', 'JSON', 'YAML', 'Python', 'SQL', 'HL7v2', 'FHIR', 'DICOM']",ONSITE,,False,Senior,DevOps,Healthtech,,49608356,1788863406
-LiveKit,['webRTC'],GLOBAL,,False,Mid,Other,SaaS,https://jobs.ashbyhq.com/livekit/463e2769-bb85-4429-96a3-3a175eb228cd,49570095,1788555376
 ,[],US_ONLY,100000.0,False,Senior,Other,,,49598799,1788790889
 ,[],US_ONLY,180000.0,False,Senior,Other,SaaS,,49601673,1788807270
 Albert,[],GLOBAL,750000.0,False,Senior,Other,Fintech,,49615435,1788895158
@@ -505,3 +500,14 @@ Oscilar.com,"['Java', 'JavaScript', 'SQL']",UNKNOWN,,False,Senior,Backend,Fintec
 Kaida,['AI'],UNKNOWN,,False,Senior,Frontend,AI,,50370710,1793822366
 ,[],GLOBAL,750000.0,False,Mid,Fullstack,Fintech,,50373706,1793840783
 SentiLink,"['Python', 'Go', 'Rust', 'Scala', 'PostgreSQL', 'Snowflake', 'Kafka', 'Redis', 'Terraform', 'Kubernetes', 'XGBoost', 'PyTorch']",GLOBAL,,False,Senior,Backend,Fintech,https://jobs.ashbyhq.com/sentilink?utm_source=hacker_news,50370932,1793823622
+Machine Age,[],GLOBAL,,False,Senior,Other,Robotics,,50393239,1793977687
+NetBird,"['Go', 'WireGuard']",GLOBAL,,False,Senior,Backend,Cybersecurity,https://netbird.io/careers,50392398,1793973732
+Zefr,"['CI/CD', 'Observability']",ONSITE,115000.0,False,Mid,DevOps,Marketing Tech,https://zefr.com,50386884,1793927253
+Piramidal,[],ONSITE,250000.0,False,Senior,Backend,Healthtech,https://grnh.se/uwaqx1xc9us,50384764,1793914472
+"iCallidus, Inc.","['AI', 'Azure', 'Microsoft Intune']",US_ONLY,145000.0,False,Mid,DevOps,Government IT,https://devitjobs.com/jobs/iCallidus-Azure-Intune-Engineer,50389352,1793951100
+,"['React', 'Next.js', 'TypeScript', 'Node.js', 'Python', 'PostgreSQL', 'MongoDB']",UNKNOWN,,False,Mid,Fullstack,Other,,50388471,1793941889
+,"['React', 'Next.js', 'TypeScript', 'Node.js', 'Python', 'PostgreSQL', 'MongoDB', 'Docker', 'LLM']",GLOBAL,,False,Mid,Fullstack,,,50382899,1793904894
+,[],ONSITE,,False,Mid,Other,Healthtech,https://docs.google.com/document/d/1KQbZwdXM0luk4z-cRHPG7oXY90F9Kf0G/edit?usp=sharing&ouid=108916183801110194164&rtpof=true&sd=true,50387346,1793931821
+Sortrace,"['Python', 'PyTorch', 'TensorFlow', 'TypeScript', 'React', 'Tailwind', 'Git']",GLOBAL,,False,Mid,Other,Cleantech,https://sortrace.com,50384008,1793910323
+Odette Technologies,['Python'],UNKNOWN,,False,Senior,ML/AI,Defense,https://odettetechnologies.com,50385049,1793915855
+Nirvana Robotics,[],ONSITE,260000.0,False,Senior,Other,Robotics,https://app.niuro.io/source/H4yYHesP?ref=ps_EBRp88zU7jcdRZm8VJc8s6Wt_yVsmnoS1d4y2CMGR1k&utm_source=hacker-news&utm_medium=job-board&utm_campaign=mechanical-engineer-newyork-onsite&utm_content=hn-whoishiring-202611,50383984,1793910224
