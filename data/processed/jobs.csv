@@ -1,31 +1,16 @@
 company,tech_stack,remote_type,salary_year_usd,visa_sponsorship,experience_level,job_role,company_industry,application_url,hn_id,timestamp
 Pango,"['Rust', 'Golang']",GLOBAL,,False,Senior,Backend,Ecommerce,,49711313,1789474149
 ,"['Node.js', 'TypeScript', 'JavaScript', 'React', 'AWS', 'PostgreSQL', 'MongoDB', 'Redis', 'Kafka', 'SQS', 'Lambda', 'Docker', 'Terraform', 'REST APIs', 'microservices', 'Datadog', 'CI/CD', 'Go']",UNKNOWN,,False,Mid,Backend,,,49686668,1789322172
-,"['Python', 'Flask', 'FastAPI', 'GraphQL', 'TaskTiger', 'Rust', 'TypeScript', 'Kafka', 'Redis', 'MongoDB', 'PostgreSQL', 'Elasticsearch', 'Docker', 'Kubernetes', 'AWS']",US_ONLY,,False,Senior,Backend,SaaS,https://close.com,49615973,1788896998
 Squoosh.AI,"['React', 'Next.js', 'TypeScript', 'Python', 'Postgres']",GLOBAL,,False,Mid,Fullstack,E-commerce AI,https://squoosh.ai,49662536,1789149429
 Catalyst·Wayfare AI,['Python'],US_ONLY,,False,Senior,ML/AI,Fintech,https://catalystwayfare.ai/careers,49650855,1789078525
 Ours Privacy,"['AWS', 'TypeScript', 'Node.js']",US_ONLY,,False,Senior,DevOps,Healthtech,https://oursprivacy.com/careers,49664325,1789156012
 Cider Consulting,"['Python', 'JavaScript', 'React', 'Node.js', 'AWS', 'Docker', 'Kubernetes', 'CI/CD']",US_ONLY,,False,Senior,Fullstack,Consulting,,49656171,1789123173
 Lumen Labs,"['ROS2', 'LiDAR', 'depth sensors', 'IMU', 'encoders']",ONSITE,,False,Senior,Other,Robotics,https://lumenresearch.co,49667711,1789176564
 Anterior,"['Python', 'Go']",ONSITE,230000.0,False,Senior,Backend,Healthtech,,49649994,1789073448
-OpenRent,"['Python', 'Django', 'React', 'Node.js']",ONSITE,110000.0,False,Senior,Fullstack,Property Tech,https://www.openrent.co.uk/jobs,49626445,1788961353
-Netrias,"['Python', 'Machine Learning']",ONSITE,,False,Senior,ML/AI,Healthtech,www.netrias.com/careers,49627985,1788967015
 Obi9,"['React', 'TypeScript', 'Node.js', 'Elixir', 'Python']",GLOBAL,,False,Mid,Fullstack,Fintech,https://obi9.ai/jobs/full-stack-engineer,49661611,1789145875
-,"['Python', 'ML', 'Docker', 'Kubernetes', 'CI/CD']",GLOBAL,170000.0,False,Mid,ML/AI,AI,,49595476,1788769140
-Whistle Robotics,[],GLOBAL,,False,Senior,Other,Robotics,,49611044,1788878648
-Langfuse,[],GLOBAL,,False,Mid,Other,AI/LLM,,49609343,1788870135
-Turquoise,[],US_ONLY,,False,Senior,Backend,Healthtech,https://jobs.ashbyhq.com/turquoise-health/fdcd9752-b372-467c-aec1-1419edee2c87,49612508,1788884466
-Newton's Tree,"['Linux', 'Kubernetes', 'JSON', 'YAML', 'Python', 'SQL', 'HL7v2', 'FHIR', 'DICOM']",ONSITE,,False,Senior,DevOps,Healthtech,,49608356,1788863406
-,[],US_ONLY,100000.0,False,Senior,Other,,,49598799,1788790889
-,[],US_ONLY,180000.0,False,Senior,Other,SaaS,,49601673,1788807270
-Albert,[],GLOBAL,750000.0,False,Senior,Other,Fintech,,49615435,1788895158
-,"['Ruby on Rails', 'React', 'Typescript', 'PHP Laravel', 'MySQL', 'Psql', 'AWS']",UNKNOWN,,False,Mid,Fullstack,,,49625444,1788956870
 Tether,[],GLOBAL,,False,Senior,Other,Crypto,https://careers.tether.io/o/technical-lead-gpu-infrastructure-pakistan?source=Hackernews,49713455,1789483879
-Matterhaul,[],ONSITE,230000.0,False,Senior,ML/AI,Supply Chain,https://www.matterhaul.com/,49613617,1788888884
 Legal Ark AI,[],US_ONLY,,False,Senior,Other,Legaltech,,49642977,1789044974
 Freeform,[],ONSITE,,False,Mid,Other,Manufacturing,,49635387,1788992589
-BOSS-IQ,[],GLOBAL,,False,Senior,Other,AI/SaaS,https://boss-iq.com,49598051,1788786800
-Estuary,[],GLOBAL,,False,Senior,Other,Data,https://estuary.dev,49613305,1788887738
 Open Education Applications / Neon,"['TypeScript', 'React', 'Python', 'Terraform', 'PostgreSQL', 'Kubernetes']",ONSITE,,False,Senior,Other,EdTech,,49922615,1790867049
 Snout,"['Node.js', 'React', 'PostgreSQL', 'AWS', 'Tailwind', 'Python', 'JavaScript', 'TypeScript']",US_ONLY,,False,Senior,Data,Healthtech,https://jobs.gem.com/snout,49922621,1790867061
 We The Flywheel,"['Figma', 'AI', 'Codex', 'Claude Code']",GLOBAL,,False,Mid,Other,Creative Agency,https://wetheflywheel.com/en/careers/production-designer-remote/?utm_source=hackernews&utm_medium=community&utm_campaign=hn-whoishiring-2026-10&utm_content=production-designer,49922606,1790867005
@@ -516,3 +501,17 @@ Prior Labs,"['Python', 'FastAPI', 'React', 'TypeScript', 'Slurm', 'GCP']",ONSITE
 3ive,"['Python', 'TypeScript', 'React', 'AI Agents']",EU_ONLY,,False,Senior,Backend,AI/Engineering,,50398466,1793998870
 Sparcle,[],UNKNOWN,,False,Mid,Other,AI,,50398375,1793998418
 BuildQ,"['Rails', 'Python', 'React', 'TypeScript', 'Postgres', 'AWS']",UNKNOWN,140000.0,False,Senior,Fullstack,Fintech,https://buildq.ai/careers/founding-engineer,50396245,1793989582
+Epsilon,[],ONSITE,150000.0,False,Lead,Backend,,https://careers.publicisgroupe.com/epsilon/jobs/151072?lang=en-us,50441512,1794323517
+LiveKit,"['VoiceAI', 'webRTC']",UNKNOWN,,False,Mid,Other,SaaS,https://jobs.ashbyhq.com/livekit/63cec43b-4627-4494-b70d-cb7f8041a4b1?utm_source=1bpyr8q375,50433727,1794266106
+Tecla IO,[],GLOBAL,,False,Mid,Other,SaaS,,50427828,1794241832
+AetherGrid,[],GLOBAL,,False,Senior,Other,AI,,50423766,1794220709
+Sunsave,[],ONSITE,,False,Senior,Fullstack,Renewable Energy,,50427924,1794242173
+Polymath,"['TypeScript', 'React', 'Python', 'FastAPI', 'AWS', 'GCP', 'Terraform', 'CloudFormation', 'Kubernetes', 'ECS', 'Auth0', 'Stripe']",ONSITE,160000.0,False,Senior,Fullstack,Manufacturing,https://polymathmade.com,50432950,1794262059
+OpenTrain AI,"['Python', 'Java', 'Node.js', 'Go', 'Rust', 'TypeScript', 'C++']",US_ONLY,,False,Mid,Backend,AI/ML,,50420399,1794192487
+Seal (YC S20),[],ONSITE,,False,Mid,Fullstack,Healthtech,https://docs.google.com/forms/d/e/1FAIpQLSfcS1I3eaCac9aV7F3ntA_vXPWoz0DIzraqvRCTPRiPV3Qjww/viewform,50424162,1794223892
+Collabify,"['TypeScript', 'React', 'Next.js', 'Node.js', 'PostgreSQL']",GLOBAL,42000.0,False,Senior,Fullstack,SaaS,https://forms.gle/yJAabKvLKtJmfz21A,50428062,1794242780
+Amodo Design,[],ONSITE,,False,Lead,DevOps,Hardware,https://amododesign.com/career/compute-infrastructure-lead/,50426542,1794236334
+Stealth Health-Tech Startup,"['TypeScript', 'Next.js', 'AWS', 'Lambda', 'Aurora Postgres', 'SQS', 'Step Functions', 'CDK']",ONSITE,,False,Senior,Backend,Healthtech,https://forms.gle/N9U7zkz2zaUUtunV7,50429861,1794250431
+,"['TypeScript', 'Node.js', 'Go', 'Python', 'React', 'PostgreSQL', 'MongoDB', 'Redis', 'RabbitMQ', 'BullMQ', 'AWS', 'Docker', 'WebSockets', 'WebRTC', 'GraphQL', 'OpenAI', 'RAG', 'Vector DBs', 'ONNX Runtime', 'Grafana', 'Loki']",GLOBAL,,True,Senior,Backend,AI/Tech,,50430411,1794252285
+,[],GLOBAL,,False,Mid,Other,,,50437037,1794294572
+,"['NVIDIA', 'CUDA', 'ROCm', 'vLLM', 'Triton Inference Server', 'Llama', 'Mistral', 'GitHub Actions', 'GitLab CI', 'ArgoCD', 'Terraform', 'Pulumi', 'AWS', 'GCP', 'Azure']",ONSITE,,False,Mid,DevOps,AI/ML,,50425675,1794232629
