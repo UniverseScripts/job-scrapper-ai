@@ -2,11 +2,8 @@ company,tech_stack,remote_type,salary_year_usd,visa_sponsorship,experience_level
 Pango,"['Rust', 'Golang']",GLOBAL,,False,Senior,Backend,Ecommerce,,49711313,1789474149
 ,"['Node.js', 'TypeScript', 'JavaScript', 'React', 'AWS', 'PostgreSQL', 'MongoDB', 'Redis', 'Kafka', 'SQS', 'Lambda', 'Docker', 'Terraform', 'REST APIs', 'microservices', 'Datadog', 'CI/CD', 'Go']",UNKNOWN,,False,Mid,Backend,,,49686668,1789322172
 Squoosh.AI,"['React', 'Next.js', 'TypeScript', 'Python', 'Postgres']",GLOBAL,,False,Mid,Fullstack,E-commerce AI,https://squoosh.ai,49662536,1789149429
-Catalyst·Wayfare AI,['Python'],US_ONLY,,False,Senior,ML/AI,Fintech,https://catalystwayfare.ai/careers,49650855,1789078525
 Ours Privacy,"['AWS', 'TypeScript', 'Node.js']",US_ONLY,,False,Senior,DevOps,Healthtech,https://oursprivacy.com/careers,49664325,1789156012
-Cider Consulting,"['Python', 'JavaScript', 'React', 'Node.js', 'AWS', 'Docker', 'Kubernetes', 'CI/CD']",US_ONLY,,False,Senior,Fullstack,Consulting,,49656171,1789123173
 Lumen Labs,"['ROS2', 'LiDAR', 'depth sensors', 'IMU', 'encoders']",ONSITE,,False,Senior,Other,Robotics,https://lumenresearch.co,49667711,1789176564
-Anterior,"['Python', 'Go']",ONSITE,230000.0,False,Senior,Backend,Healthtech,,49649994,1789073448
 Obi9,"['React', 'TypeScript', 'Node.js', 'Elixir', 'Python']",GLOBAL,,False,Mid,Fullstack,Fintech,https://obi9.ai/jobs/full-stack-engineer,49661611,1789145875
 Tether,[],GLOBAL,,False,Senior,Other,Crypto,https://careers.tether.io/o/technical-lead-gpu-infrastructure-pakistan?source=Hackernews,49713455,1789483879
 Open Education Applications / Neon,"['TypeScript', 'React', 'Python', 'Terraform', 'PostgreSQL', 'Kubernetes']",ONSITE,,False,Senior,Other,EdTech,,49922615,1790867049
@@ -519,3 +516,9 @@ Quaisr,[],ONSITE,,False,Mid,Other,Scientific Tech,https://quaisr.com/careers/dev
 RAIDS AI,"['Python', 'Django', 'FastAPI', 'React', 'TypeScript']",GLOBAL,,False,Senior,Fullstack,AI,https://www.linkedin.com/jobs/view/4483409995/,50451710,1794392224
 Odin,"['GCP', 'GKE', 'Postgres']",UNKNOWN,,False,Senior,DevOps,Construction Tech,https://job-boards.greenhouse.io/odinlabs/jobs/4451905009,50447035,1794348841
 Nevral Forensics Intelligence (NFI),[],GLOBAL,,False,Unknown,Other,Digital Forensics,,50449027,1794363184
+Native,[],UNKNOWN,,False,Mid,Other,SaaS,,50466168,1794486214
+Kroo,[],ONSITE,197500.0,False,Mid,Backend,Construction Tech,https://app.loxo.co/job/MTA5OTQtOXlxejM5ZG9lY3Y2MjF0NQ==,50460238,1794438437
+Landlord,[],GLOBAL,80000.0,False,Mid,ML/AI,Self-storage,,50461075,1794442914
+,"['Python', 'Data Analytics']",UNKNOWN,,False,Mid,Backend,Bioinformatics,,50456889,1794422468
+Foji,"['TypeScript', 'React', 'Node.js']",US_ONLY,110000.0,False,Mid,Fullstack,Healthtech,https://wellfound.com/company/fojisoft/jobs,50460895,1794441827
+Footprint,['Rust'],ONSITE,,False,Mid,Fullstack,Fintech,,50456061,1794418499
