@@ -1,10 +1,6 @@
 company,tech_stack,remote_type,salary_year_usd,visa_sponsorship,experience_level,job_role,company_industry,application_url,hn_id,timestamp
 Pango,"['Rust', 'Golang']",GLOBAL,,False,Senior,Backend,Ecommerce,,49711313,1789474149
 ,"['Node.js', 'TypeScript', 'JavaScript', 'React', 'AWS', 'PostgreSQL', 'MongoDB', 'Redis', 'Kafka', 'SQS', 'Lambda', 'Docker', 'Terraform', 'REST APIs', 'microservices', 'Datadog', 'CI/CD', 'Go']",UNKNOWN,,False,Mid,Backend,,,49686668,1789322172
-Squoosh.AI,"['React', 'Next.js', 'TypeScript', 'Python', 'Postgres']",GLOBAL,,False,Mid,Fullstack,E-commerce AI,https://squoosh.ai,49662536,1789149429
-Ours Privacy,"['AWS', 'TypeScript', 'Node.js']",US_ONLY,,False,Senior,DevOps,Healthtech,https://oursprivacy.com/careers,49664325,1789156012
-Lumen Labs,"['ROS2', 'LiDAR', 'depth sensors', 'IMU', 'encoders']",ONSITE,,False,Senior,Other,Robotics,https://lumenresearch.co,49667711,1789176564
-Obi9,"['React', 'TypeScript', 'Node.js', 'Elixir', 'Python']",GLOBAL,,False,Mid,Fullstack,Fintech,https://obi9.ai/jobs/full-stack-engineer,49661611,1789145875
 Tether,[],GLOBAL,,False,Senior,Other,Crypto,https://careers.tether.io/o/technical-lead-gpu-infrastructure-pakistan?source=Hackernews,49713455,1789483879
 Open Education Applications / Neon,"['TypeScript', 'React', 'Python', 'Terraform', 'PostgreSQL', 'Kubernetes']",ONSITE,,False,Senior,Other,EdTech,,49922615,1790867049
 Snout,"['Node.js', 'React', 'PostgreSQL', 'AWS', 'Tailwind', 'Python', 'JavaScript', 'TypeScript']",US_ONLY,,False,Senior,Data,Healthtech,https://jobs.gem.com/snout,49922621,1790867061
@@ -522,3 +518,11 @@ Landlord,[],GLOBAL,80000.0,False,Mid,ML/AI,Self-storage,,50461075,1794442914
 ,"['Python', 'Data Analytics']",UNKNOWN,,False,Mid,Backend,Bioinformatics,,50456889,1794422468
 Foji,"['TypeScript', 'React', 'Node.js']",US_ONLY,110000.0,False,Mid,Fullstack,Healthtech,https://wellfound.com/company/fojisoft/jobs,50460895,1794441827
 Footprint,['Rust'],ONSITE,,False,Mid,Fullstack,Fintech,,50456061,1794418499
+Confidential Healthcare AI Startup,"['React', 'TypeScript', 'Python', 'FastAPI', 'Django']",ONSITE,180000.0,False,Senior,Fullstack,Healthtech,,50484305,1794581269
+Bechtel,[],GLOBAL,145000.0,False,Mid,Other,Construction,https://bechtel.jobs.hr.cloud.sap/job-invite/300797/,50483905,1794579707
+Elm AI,[],GLOBAL,,False,Mid,Fullstack,AI,,50481529,1794566615
+CERN,"['Python', 'PyTorch', 'TensorFlow', 'JAX', 'scikit-learn']",UNKNOWN,,False,Mid,ML/AI,Healthtech,,50480454,1794560678
+,"['React', 'TypeScript', 'Python', 'Kotlin', 'Spring Boot', 'GraphQL', 'FastAPI', 'Snowflake', 'C++']",UNKNOWN,,False,Senior,Fullstack,Fintech,,50479091,1794550646
+,[],GLOBAL,,False,Unknown,Other,,,50479794,1794556016
+Genentech,"['Python', 'PyTorch']",ONSITE,,False,Intern,Data,Healthcare,https://go.gene.com/PDD-SSF-DigitalAI-Intern,50477398,1794537451
+Alternative Payments,"['Go', 'TypeScript', 'Python', 'Postgres']",UNKNOWN,,False,Senior,Fullstack,Fintech,https://jobs.ashbyhq.com/alternativepayments/76a7a829-d08d-4a0f-9a88-7d471a5a1e49,50474550,1794518927
